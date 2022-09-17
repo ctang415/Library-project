@@ -1,0 +1,24 @@
+.container {
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.container > span {
+    font-size: 22px;
+}
+
+.form {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 5px;
+    font-size: 18px;
+    padding-top: 10px;
+}
+
+input {
+    width: 25%;
+}
+
+button {
+    width: 10%
+}

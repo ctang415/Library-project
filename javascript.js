@@ -2,6 +2,7 @@ const bookTitle = document.getElementById('title');
 const bookAuthor = document.getElementById('author');
 const bookPages = document.getElementById('pages');
 const bookRead = document.getElementById('read');
+const button = document.getElementById('submit')
 
 let myLibrary = [];
 
@@ -15,5 +16,13 @@ function Book(title, author, pages, read) {
     }
 }
 
+button.addEventListener('click', function() {
+    myLibrary.push(bookTitle.value);
+    myLibrary.push(bookAuthor.value);
+    myLibrary.push(bookPages.value);
+    myLibrary.push(bookRead.value);
+    });
+
 function addBooksToLibrary () {
+
 }
