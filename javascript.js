@@ -17,12 +17,25 @@ function Book(title, author, pages, read) {
 }
 
 button.addEventListener('click', function() {
+    if (bookTitle.value === '' || bookAuthor.value === '' || bookPages.value === '' || bookRead.value === '') {
+        !button;
+    }
+    else {
     myLibrary.push(bookTitle.value);
     myLibrary.push(bookAuthor.value);
     myLibrary.push(bookPages.value);
     myLibrary.push(bookRead.value);
+    clearValue();
+    }
     });
 
-function addBooksToLibrary () {
+function clearValue() {
+    bookTitle.value = '';
+    bookAuthor.value = '';
+    bookPages.value = '';
+    bookRead.value = '';
+}
+
+function addBooksToLibrary() {
 
 }
