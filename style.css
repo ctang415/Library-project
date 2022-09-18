@@ -8,7 +8,7 @@
     font-weight: bold;
 }
 
-.form {
+.myform {
     display: grid;
     grid-template-columns: 1fr;
     gap: 5px;
@@ -16,6 +16,11 @@
     padding-top: 10px;
 }
 
+.radio {
+    display: flex;
+    justify-self: left;
+    gap: 10px;
+}
 
 
 input {

@@ -9,8 +9,10 @@
 </head>
 <body>
     <div class="container">
-        <span>Add a book to the library</span>
-        <div class="form">
+        <span>The Library Project</span>
+        <button type="button" id="add">Add a new book</button>
+        <form>
+        <div class="myform" id="form">
             <span>Title:</span>
             <input type="text" id="title">
             <span>Author:</span>
@@ -18,9 +20,15 @@
             <span>Number of pages:</span>
             <input type="number" id="pages">
             <span>Have you read it yet? </span>
-            <input type="text" id="read">
-            <button type="submit" id="submit">Submit</button>
+            <div class="radio">
+            <label for="read">Yes</label>
+            <input type="radio" id="read" value="true">
+            <label for="notread">No</label>
+            <input type="radio" id="notread" value="false">
         </div>
+            <button type="button" id="submit">Submit</button>
+        </div>
+    </form>
     </div>
     <script src="javascript.js"></script>
 </body>
