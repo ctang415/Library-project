@@ -15,7 +15,7 @@
         </div>
         <div class="loginform" id="loginform" style="display:none">
         <div class="myform" id="form" style="display:none">
-            <form class="form-container">
+            <form id="formID" class="form-container">
             <span>Title:</span>
             <input type="text" id="title">
             <span>Author:</span>
@@ -25,9 +25,9 @@
             <span>Have you read it yet? </span>
         <div class="radio">
             <label for="read">Yes</label>
-            <input type="radio" id="read" name="choice" value="true">
+            <input type="radio" id="read" name="choice" value="read" checked>
             <label for="notread">No</label>
-            <input type="radio" id="notread" name="choice" value="false">
+            <input type="radio" id="notread" name="choice" value="unread">
         </div>
         <div class="buttons">
             <button type="button" id="submit">Submit</button>

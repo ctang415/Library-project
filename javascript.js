@@ -1,10 +1,8 @@
 const bookTitle = document.getElementById('title');
 const bookAuthor = document.getElementById('author');
 const bookPages = document.getElementById('pages');
-const bookRead = document.getElementById('read');
 const button = document.getElementById('submit')
 const add = document.getElementById('add');
-const form = document.getElementById('form');
 const close = document.getElementById('close')
 
 add.addEventListener('click', function() {
@@ -47,30 +45,33 @@ function Book(title, author, pages, read) {
 });
 */
 
+let book;
+
 button.addEventListener('click', function() {
-    if (bookTitle.value === '' || bookAuthor.value === '' || bookPages.value === '' || bookRead.value === '') {
+    if (bookTitle.value === '' || bookAuthor.value === '' || bookPages.value === '' ) {
         !button;
     }
     else {
-        const book = new Book(bookTitle.value, bookAuthor.value, bookPages.value, bookRead.value)
-        clearValue();
+        const bookRead = document.querySelector('input[name=choice]:checked')
+        book = new Book(bookTitle.value, bookAuthor.value, bookPages.value, bookRead.value)
+        document.getElementById('formID').reset()
         document.getElementById('form').style.display = "none";
         document.getElementById('loginform').style.display = 'none';
         console.log(book.info());
+        myLibrary.push(book);
     }
 });
 
-
+/*
 function clearValue() {
     bookTitle.value = '';
     bookAuthor.value = '';
     bookPages.value = '';
     bookRead.value = '';
 }
+*/
 
 
-function addBooksToLibrary() {
-    for (const book of myLibrary) {
-        console.log(book);
-    }
+function addBookToLibrary() {
+    
 }
