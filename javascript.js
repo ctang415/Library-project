@@ -5,6 +5,7 @@ const bookRead = document.getElementById('read');
 const button = document.getElementById('submit')
 const add = document.getElementById('add');
 const form = document.getElementById('form');
+const close = document.getElementById('close')
 
 function closeForm() {
     document.getElementById('form').style.display = "none";
@@ -12,9 +13,13 @@ function closeForm() {
 
 closeForm();
 
-add.addEventListener('click', function () {
+add.addEventListener('click', function() {
     document.getElementById('form').style.display = "block";
 });
+
+close.addEventListener('click', function(){
+    document.getElementById('form').style.display = "none";
+})
 
 
 let myLibrary = [];
