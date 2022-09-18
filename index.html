@@ -13,8 +13,9 @@
         <span>The Library Project</span>
         <button type="button" id="add">Add a new book</button>
         </div>
-    <form>
-        <div class="myform" id="form">
+        <div class="loginform" id="loginform" style="display:none">
+        <div class="myform" id="form" style="display:none">
+            <form class="form-container">
             <span>Title:</span>
             <input type="text" id="title">
             <span>Author:</span>
@@ -24,12 +25,15 @@
             <span>Have you read it yet? </span>
         <div class="radio">
             <label for="read">Yes</label>
-            <input type="radio" id="read" value="true">
+            <input type="radio" id="read" name="choice" value="true">
             <label for="notread">No</label>
-            <input type="radio" id="notread" value="false">
+            <input type="radio" id="notread" name="choice" value="false">
         </div>
+        <div class="buttons">
             <button type="button" id="submit">Submit</button>
             <button type="button" id="close">Close</button>
+        </div>
+        </div>
         </div>
     </form>
     </div>
