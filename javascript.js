@@ -49,24 +49,26 @@ button.addEventListener('click', function() {
     }
 });
 
-const container = document.querySelector('.container');
+const container = document.querySelector('.box');
 
 function addBookToLibrary() {
     const newDiv = document.createElement('div');
-    newDiv.setAttribute('style', 'white-space: pre; background-color: #AD6A34;')
+    newDiv.setAttribute('style', 'display: grid; grid-template-columns: 1fr; justify-items:center; padding:30px; text-align: center; font-size: 30px; font-weight: bold; white-space: pre; background-color: #AD6A34; border: black solid 5px; border-radius: 5px;')
     newDiv.textContent = book.title;
     newDiv.textContent += "\r\n";
-    newDiv.textContent += book.author;
+    newDiv.textContent += "By " + book.author;
     newDiv.textContent += "\r\n";
     newDiv.textContent += book.pages;
     if (book.read === 'unread') {
         const newButton = document.createElement('button');
+        newButton.setAttribute('style', 'font-size: 17px; background-color: #B22222; border: solid 2px; border-radius: 10px;')
         newDiv.textContent += "\r\n";
         newButton.textContent = "Not read";
         newDiv.appendChild(newButton)
      }
      else if (book.read === 'read') {
         const newButton = document.createElement('button');
+        newButton.setAttribute('style', 'font-size: 17px; background-color: green; border: solid 2px; border-radius: 10px;')
         newDiv.textContent += "\r\n";
         newButton.textContent = "Read";
         newDiv.appendChild(newButton)
@@ -75,24 +77,3 @@ function addBookToLibrary() {
 }
 
 
-/*
-
-            
-        }
-             book.title;
-             book.author;
-             book.pages;
-             if (book.read === 'unread') {
-                const newButton = document.createElement('button');
-                newButton.textContent = "Not read";
-                container.appendChild(newButton)
-                container.appendChild(newDiv);
-             }
-             else if (book.read === 'read') {
-                const newButton = document.createElement('button');
-                newButton.textContent = "Read";
-                container.appendChild(newButton)
-                container.appendChild(newDiv);
-             }
-        }
-*/
