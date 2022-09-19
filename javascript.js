@@ -49,7 +49,7 @@ button.addEventListener('click', function() {
     }
 });
 
-const container = document.querySelector('.box');
+const box = document.querySelector('.box');
 
 function addBookToLibrary() {
     const newDiv = document.createElement('div');
@@ -61,19 +61,29 @@ function addBookToLibrary() {
     newDiv.textContent += book.pages;
     if (book.read === 'unread') {
         const newButton = document.createElement('button');
-        newButton.setAttribute('style', 'font-size: 17px; background-color: #B22222; border: solid 2px; border-radius: 10px;')
+        newButton.setAttribute('style', 'font-size: 15px; background-color: #B22222; border: solid 2px; border-radius: 10px;')
         newDiv.textContent += "\r\n";
         newButton.textContent = "Not read";
-        newDiv.appendChild(newButton)
+        newDiv.appendChild(newButton);
      }
      else if (book.read === 'read') {
         const newButton = document.createElement('button');
-        newButton.setAttribute('style', 'font-size: 17px; background-color: green; border: solid 2px; border-radius: 10px;')
+        newButton.setAttribute('style', 'font-size: 15px; background-color: green; border: solid 2px; border-radius: 10px;')
         newDiv.textContent += "\r\n";
         newButton.textContent = "Read";
-        newDiv.appendChild(newButton)
+        newDiv.appendChild(newButton);
      }
-     container.appendChild(newDiv);
+     const remove = document.createElement('button');
+     remove.setAttribute('style', 'font-size: 15px; background-color: #999999; border: solid 2px; border-radius: 10px;')
+     remove.textContent = "Remove";
+     newDiv.appendChild(remove);
+     box.appendChild(newDiv);
+     remove.addEventListener('click', function() {
+        while (newDiv.firstChild) {
+            newDiv.removeChild(newDiv.firstChild)
+        }
+        box.removeChild(newDiv);
+     })
 }
 
 
