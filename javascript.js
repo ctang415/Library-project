@@ -52,63 +52,6 @@ button.addEventListener('click', function() {
 
 const box = document.querySelector('.box');
 
-/*
-function addBookToLibrary() {
-    const newDiv = document.createElement('div');
-    newDiv.setAttribute('style', 'display: grid; grid-template-columns: 1fr; justify-items:center; padding:30px; text-align: center; font-size: 30px; font-weight: bold; white-space: pre; background-color: #AD6A34; border: black solid 5px; border-radius: 5px;')
-    newDiv.textContent = book.title;
-    newDiv.textContent += "\r\n";
-    newDiv.textContent += "By " + book.author;
-    newDiv.textContent += "\r\n";
-    newDiv.textContent += book.pages;
-    if (book.read === 'unread') {
-        const newButton = document.createElement('button');
-        newButton.setAttribute('style', 'font-size: 15px; background-color: #B22222; border: solid 2px; border-radius: 10px;')
-        newDiv.textContent += "\r\n";
-        newButton.textContent = "Not read";
-        newDiv.appendChild(newButton);
-        newButton.addEventListener('click', function() {
-            if (newButton.textContent === "Not read") {
-                newButton.textContent = "Read"
-                myLibrary.read = false;
-            }
-            else if (newButton.textContent === "Read") {
-                newButton.textContent = "Not read";
-                myLibrary.read = true;
-            }
-    })
-}
-     else if (book.read === 'read') {
-        const newButton = document.createElement('button');
-        newButton.setAttribute('style', 'font-size: 15px; background-color: green; border: solid 2px; border-radius: 10px;')
-        newDiv.textContent += "\r\n";
-        newButton.textContent = "Read";
-        newDiv.appendChild(newButton);
-        newButton.addEventListener('click', function() {
-            if (newButton.textContent === "Read") {
-                newButton.textContent = "Not Read"
-                myLibrary.read = false;
-            }
-            else if (newButton.textContent === "Not Read") {
-                newButton.textContent = "Read"
-                myLibrary.read = true;
-            }
-    })
-     }
-     const remove = document.createElement('button');
-     remove.setAttribute('style', 'font-size: 15px; background-color: #999999; border: solid 2px; border-radius: 10px;')
-     remove.textContent = "Remove";
-     newDiv.appendChild(remove);
-     box.appendChild(newDiv);
-     remove.addEventListener('click', function() {
-        while (newDiv.firstChild) {
-            newDiv.removeChild(newDiv.firstChild)
-        }
-        box.removeChild(newDiv);
-     })
-}
-
-*/
 
 Book.prototype.toggleStatus = function(status) {
     this.status = status;
