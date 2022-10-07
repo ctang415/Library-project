@@ -40,6 +40,9 @@ class Book {
     this.read = read;
     this.status = status;
   }
+  toggleStatus(status) {
+    this.status = status
+  }
 }
 
 
@@ -104,7 +107,7 @@ function addBookToLibrary() {
         newDiv.appendChild(newButton);
         newButton.addEventListener('click', function() {
                 for (let i = 0; i < myLibrary.length; i++) {
-                    let b = myLibrary[i].status;              
+                    let b = myLibrary[i].status;            
                     if (b === 'unread') {
                       newButton.textContent = 'Read';
                       newButton.setAttribute('style', 'background-color: green')
