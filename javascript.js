@@ -20,17 +20,6 @@ close.addEventListener('click', function(){
 
 let myLibrary = [];
 
-/*
-class Book {
-  constructor(title, author, pages, read, status) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages + " pages";
-    this.read = read;
-    this.status = status;
-  }
-}
-*/
 
 class Book {
   constructor(title, author, pages, read, status) {
@@ -44,8 +33,6 @@ class Book {
     this.status = status
   }
 }
-
-
 
 
 let book;
@@ -65,30 +52,6 @@ button.addEventListener('click', function() {
     }
 });
 
-
-
-
-
-
-
-
-/*
-function Book(title, author, pages, read) {
-    this.title = title
-    this.author = author
-    this.pages = pages + " pages"
-    this.read = read
-    this.info = function() {
-        return this.title + ' by ' + this.author + ", " + this.pages + ' pages, ' + this.read
-    }
-}
-*/
-
-/*
-Book.prototype.toggleStatus = function(status) {
-    this.status = status;
-}
-*/
 
 
 function addBookToLibrary() {
