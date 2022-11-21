@@ -1,60 +1,61 @@
-const title = document.getElementById('title');
-const author = document.getElementById('author');
-const pages = document.getElementById('pages');
-const button = document.getElementById('submit')
-const add = document.getElementById('add');
-const close = document.getElementById('close');
-const box = document.querySelector('.box');
+  const title = document.getElementById('title');
+  const author = document.getElementById('author');
+  const pages = document.getElementById('pages');
+  const button = document.getElementById('submit')
+  const add = document.getElementById('add');
+  const close = document.getElementById('close');
+  const box = document.querySelector('.box');
+  const form = document.getElementById('formID');
+  let myLibrary = [];
+  let book;
 
-add.addEventListener('click', function() {
-    document.getElementById('form').style.display = "block";
-    document.getElementById('loginform').style.display = 'block';
-
-});
-
-close.addEventListener('click', function(){
-    document.getElementById('form').style.display = "none";
-    document.getElementById('loginform').style.display = 'none';
-
-})
-
-let myLibrary = [];
-
-
-class Book {
-  constructor(title, author, pages, read, status) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages + " pages";
-    this.read = read;
-    this.status = status;
-  }
-  toggleStatus(status) {
-    this.status = status
-  }
-}
-
-
-let book;
-
-button.addEventListener('click', function() {
-    if (title.value === '' || author.value === '' || pages.value === '' ) {
-        !button;
+  class Book {
+    constructor(title, author, pages, read, status) {
+      this.title = title;
+      this.author = author;
+      this.pages = pages + " pages";
+      this.read = read;
+      this.status = status;
     }
-    else {
+    toggleStatus(status) {
+      this.status = status
+    }
+  }
+
+  add.addEventListener('click', function() {
+    document.getElementById('form').style.display = 'block';
+    document.getElementById('loginform').style.display = 'block';
+    title.setAttribute('required', 'true')
+    author.setAttribute('required', 'true')
+    pages.setAttribute('required', 'true')
+  });
+
+  close.addEventListener('click', function() {
+    document.getElementById('form').style.display = 'none';
+    document.getElementById('loginform').style.display = 'none';
+    title.removeAttribute('required')
+    author.removeAttribute('required')
+    pages.removeAttribute('required')
+  })
+
+  form.addEventListener('submit', function(e) {
         const bookRead = document.querySelector('input[name=choice]:checked')
         book = new Book(title.value, author.value, pages.value, bookRead.value)
         myLibrary.push(book);
         addBookToLibrary();
+        e.preventDefault();
         document.getElementById('formID').reset()
-        document.getElementById('form').style.display = "none";
+        document.getElementById('form').style.display = 'none';
         document.getElementById('loginform').style.display = 'none';
-    }
-});
+        title.removeAttribute('required')
+        author.removeAttribute('required')
+        pages.removeAttribute('required')
+        
+  });
+  
+ 
 
-
-
-function addBookToLibrary() {
+  function addBookToLibrary() {
     const newDiv = document.createElement('div');
     newDiv.setAttribute('style', 'display: grid; grid-template-columns: 1fr; justify-items:center; padding:30px; text-align: center; font-size: 30px; font-weight: bold; white-space: pre; background-color: #AD6A34; border: black solid 5px; border-radius: 5px;')
     newDiv.textContent = book.title;
@@ -91,8 +92,7 @@ function addBookToLibrary() {
                       }
                   }
     })
-}
-     else if (book.read === 'read') {
+} else if (book.read === 'read') {
         const newButton = document.createElement('button');
         newButton.setAttribute('style', 'font-size: 15px; background-color: green; border: solid 2px; border-radius: 10px;')
         newDiv.textContent += "\r\n";
@@ -110,7 +110,6 @@ function addBookToLibrary() {
                   newButton.setAttribute('style', 'background-color: green')
                   myLibrary[i].toggleStatus('read');
                 }
-          
                 if (b === 'unread') {
                   newButton.textContent = 'Read';
                   newButton.setAttribute('style', 'background-color: green')

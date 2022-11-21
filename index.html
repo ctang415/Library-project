@@ -14,14 +14,14 @@
         <button type="button" id="add">Add a new book</button>
         </div>
         <div class="loginform" id="loginform" style="display:none">
-        <div class="myform" id="form" style="display:none">
+        <div class="myform" id="form" style="display:none" >
             <form id="formID" class="form-container">
-            <span>Title:</span>
-            <input type="text" id="title">
-            <span>Author:</span>
-            <input type="text" id="author">
-            <span>Number of pages:</span>
-            <input type="number" id="pages">
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title">
+            <label for="author">Author:</label>
+            <input type="text" id="author" name="author">
+            <label for="pages">Number of pages:</label>
+            <input type="number" id="pages" name="pages">
             <span>Have you read it yet? </span>
         <div class="radio">
             <label for="read">Yes</label>
@@ -30,13 +30,12 @@
             <input type="radio" id="notread" name="choice" value="unread">
         </div>
         <div class="buttons">
-            <button type="button" id="submit">Submit</button>
+            <button type="submit" id="submit">Submit</button>
             <button type="button" id="close">Close</button>
         </div>
         </div>
         </div>
         <div class="box">
-            
         </div>
         </form>
     </div>
