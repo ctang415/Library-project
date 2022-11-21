@@ -56,7 +56,6 @@
     background-color: #fff;
 }
 
-
 .radio, .buttons {
     display: flex;
     gap: 10px;
@@ -66,7 +65,6 @@
 label {
     background-color: #fff;
 }
-
 
 input {
     width: 50%;

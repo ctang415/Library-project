@@ -53,14 +53,12 @@
         
   });
   
- 
-
   function addBookToLibrary() {
     const newDiv = document.createElement('div');
     newDiv.setAttribute('style', 'display: grid; grid-template-columns: 1fr; justify-items:center; padding:30px; text-align: center; font-size: 30px; font-weight: bold; white-space: pre; background-color: #AD6A34; border: black solid 5px; border-radius: 5px;')
     newDiv.textContent = book.title;
     newDiv.textContent += "\r\n";
-    newDiv.textContent += "By " + book.author;
+    newDiv.textContent += "By: " + book.author;
     newDiv.textContent += "\r\n";
     newDiv.textContent += book.pages;
     if (book.read === 'unread') {
